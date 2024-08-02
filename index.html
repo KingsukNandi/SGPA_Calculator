@@ -1,0 +1,434 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>SGPA Calculator</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" id="theme-link" href="lightTheme.css" />
+  </head>
+  <body>
+    <button id="theme-toggle" onclick="toggleTheme()">
+      <span id="theme-icon"></span>
+      <span id="theme-text">Toggle Theme</span>
+    </button>
+    <div class="tab">
+      <button
+        class="tablinks"
+        onclick="openTab(event, 'tab1')"
+        id="defaultOpen"
+      >
+        Scheme-A
+      </button>
+      <button class="tablinks" onclick="openTab(event, 'tab2')">
+        Scheme-B
+      </button>
+    </div>
+    <div id="tab1" class="tabcontent">
+      <div class="container">
+        <h1>SGPA Calculator</h1>
+
+        <div class="subject">
+          <label for="subject1">T & NM (MA11002):</label>
+          <input
+            type="number"
+            id="subject1"
+            placeholder="End-Sem Marks"
+            min="0"
+            max="50"
+            maxlength="2"
+          />
+          <input
+            type="number"
+            id="midsem1"
+            placeholder="Mid-Sem Marks"
+            min="0"
+            max="20"
+          />
+          <input
+            type="number"
+            id="internal1"
+            placeholder="Internal Marks"
+            min="0"
+            max="30"
+          />
+        </div>
+        <div class="subject">
+          <label for="subject2">Chemistry (CH10001):</label>
+          <input
+            type="number"
+            id="subject2"
+            placeholder="End-Sem Marks"
+            min="0"
+            max="50"
+          />
+          <input
+            type="number"
+            id="midsem2"
+            placeholder="Mid-Sem Marks"
+            min="0"
+            max="20"
+          />
+          <input
+            type="number"
+            id="internal2"
+            placeholder="Internal Marks"
+            min="0"
+            max="30"
+          />
+        </div>
+        <div class="subject">
+          <label for="subject3">English (HS10001):</label>
+          <input
+            type="number"
+            id="subject3"
+            placeholder="End-Sem Marks"
+            min="0"
+            max="50"
+          />
+          <input
+            type="number"
+            id="midsem3"
+            placeholder="Mid-Sem Marks"
+            min="0"
+            max="20"
+          />
+          <input
+            type="number"
+            id="internal3"
+            placeholder="Internal Marks"
+            min="0"
+            max="30"
+          />
+        </div>
+        <div class="subject">
+          <label for="subject4">Basic Electronics (EC10001):</label>
+          <input
+            type="number"
+            id="subject4"
+            placeholder="End-Sem Marks"
+            min="0"
+            max="50"
+          />
+          <input
+            type="number"
+            id="midsem4"
+            placeholder="Mid-Sem Marks"
+            min="0"
+            max="20"
+          />
+          <input
+            type="number"
+            id="internal4"
+            placeholder="Internal Marks"
+            min="0"
+            max="30"
+          />
+        </div>
+        <div class="subject">
+          <label for="subject5">Basic Electrical Engg. (EE10002):</label>
+          <input
+            type="number"
+            id="subject5"
+            placeholder="End-Sem Marks"
+            min="0"
+            max="50"
+          />
+          <input
+            type="number"
+            id="midsem5"
+            placeholder="Mid-Sem Marks"
+            min="0"
+            max="20"
+          />
+          <input
+            type="number"
+            id="internal5"
+            placeholder="Internal Marks"
+            min="0"
+            max="30"
+          />
+        </div>
+        <div class="subject">
+          <label for="subject6">Elective:</label>
+          <input
+            type="number"
+            id="subject6"
+            placeholder="End-Sem Marks"
+            min="0"
+            max="50"
+          />
+          <input
+            type="number"
+            id="midsem6"
+            placeholder="Mid-Sem Marks"
+            min="0"
+            max="20"
+          />
+          <input
+            type="number"
+            id="internal6"
+            placeholder="Internal Marks"
+            min="0"
+            max="30"
+          />
+        </div>
+        <div class="subject">
+          <label for="subject7">Chemistry Lab (CH19001):</label>
+          <input
+            type="number"
+            id="subject7"
+            placeholder="Practical Marks"
+            min="0"
+            max="100"
+          />
+        </div>
+        <div class="subject">
+          <label for="subject8">Engineering Lab (EX19001):</label>
+          <input
+            type="number"
+            id="subject8"
+            placeholder="Practical Marks"
+            min="0"
+            max="100"
+          />
+        </div>
+        <div class="subject">
+          <label for="subject9">Yoga (YG18001):</label>
+          <input
+            type="number"
+            id="subject9"
+            placeholder="Sessional Marks"
+            min="0"
+            max="100"
+          />
+        </div>
+        <div class="subject">
+          <label for="subject10">Workshop (ME18001):</label>
+          <input
+            type="number"
+            id="subject10"
+            placeholder="Sessional Marks"
+            min="0"
+            max="100"
+          />
+        </div>
+        <div class="subject">
+          <label for="subject11">Communication Lab (HS18001):</label>
+          <input
+            type="number"
+            id="subject11"
+            placeholder="Sessional Marks"
+            min="0"
+            max="100"
+          />
+        </div>
+
+        <button class="calculate" onclick="calculateGPA()">
+          <span>Calculate SGPA </span>
+        </button>
+        <div class="result" id="result"></div>
+      </div>
+    </div>
+
+    <div id="tab2" class="tabcontent">
+      <div class="container">
+        <h1>SGPA Calculator</h1>
+
+        <div class="subject">
+          <label for="subject1">T & NM (MA11002):</label>
+          <input
+            type="number"
+            id="subject1"
+            placeholder="End-Sem Marks"
+            min="0"
+            max="50"
+            maxlength="2"
+          />
+          <input
+            type="number"
+            id="midsem1"
+            placeholder="Mid-Sem Marks"
+            min="0"
+            max="20"
+          />
+          <input
+            type="number"
+            id="internal1"
+            placeholder="Internal Marks"
+            min="0"
+            max="30"
+          />
+        </div>
+        <div class="subject">
+          <label for="subject2">Physics (PH10001):</label>
+          <input
+            type="number"
+            id="subject2"
+            placeholder="End-Sem Marks"
+            min="0"
+            max="50"
+          />
+          <input
+            type="number"
+            id="midsem2"
+            placeholder="Mid-Sem Marks"
+            min="0"
+            max="20"
+          />
+          <input
+            type="number"
+            id="internal2"
+            placeholder="Internal Marks"
+            min="0"
+            max="30"
+          />
+        </div>
+        <div class="subject">
+          <label for="subject3">EVS (CH10003):</label>
+          <input
+            type="number"
+            id="subject3"
+            placeholder="End-Sem Marks"
+            min="0"
+            max="50"
+          />
+          <input
+            type="number"
+            id="midsem3"
+            placeholder="Mid-Sem Marks"
+            min="0"
+            max="20"
+          />
+          <input
+            type="number"
+            id="internal3"
+            placeholder="Internal Marks"
+            min="0"
+            max="30"
+          />
+        </div>
+        <div class="subject">
+          <label for="subject4">SLS (LS10001):</label>
+          <input
+            type="number"
+            id="subject4"
+            placeholder="End-Sem Marks"
+            min="0"
+            max="50"
+          />
+          <input
+            type="number"
+            id="midsem4"
+            placeholder="Mid-Sem Marks"
+            min="0"
+            max="20"
+          />
+          <input
+            type="number"
+            id="internal4"
+            placeholder="Internal Marks"
+            min="0"
+            max="30"
+          />
+        </div>
+        <div class="subject">
+          <label for="subject5">Elective-I:</label>
+          <input
+            type="number"
+            id="subject5"
+            placeholder="End-Sem Marks"
+            min="0"
+            max="50"
+          />
+          <input
+            type="number"
+            id="midsem5"
+            placeholder="Mid-Sem Marks"
+            min="0"
+            max="20"
+          />
+          <input
+            type="number"
+            id="internal5"
+            placeholder="Internal Marks"
+            min="0"
+            max="30"
+          />
+        </div>
+        <div class="subject">
+          <label for="subject6">Elective-II:</label>
+          <input
+            type="number"
+            id="subject6"
+            placeholder="End-Sem Marks"
+            min="0"
+            max="50"
+          />
+          <input
+            type="number"
+            id="midsem6"
+            placeholder="Mid-Sem Marks"
+            min="0"
+            max="20"
+          />
+          <input
+            type="number"
+            id="internal6"
+            placeholder="Internal Marks"
+            min="0"
+            max="30"
+          />
+        </div>
+        <div class="subject">
+          <label for="subject7">Programming Lab (CS13001):</label>
+          <input
+            type="number"
+            id="subject7"
+            placeholder="Practical Marks"
+            min="0"
+            max="100"
+          />
+        </div>
+        <div class="subject">
+          <label for="subject8">Physics Lab (PH19001):</label>
+          <input
+            type="number"
+            id="subject8"
+            placeholder="Practical Marks"
+            min="0"
+            max="100"
+          />
+        </div>
+        <div class="subject">
+          <label for="subject9">ED & G (CE18001):</label>
+          <input
+            type="number"
+            id="subject9"
+            placeholder="Sessional Marks"
+            min="0"
+            max="100"
+          />
+        </div>
+
+        <button class="calculate" onclick="calculateGPA()">
+          <span>Calculate SGPA </span>
+        </button>
+        <div class="result" id="result"></div>
+      </div>
+    </div>
+    <div class="developedBy">
+      Developed by
+      <a href="https://www.linkedin.com/in/kingsuk-nandi/" target="_blank"
+        >Kingsuk Nandi</a
+      >
+    </div>
+
+    <script src="script.js"></script>
+  </body>
+</html>

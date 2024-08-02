@@ -1,0 +1,183 @@
+:root,
+:root::after,
+:root::before {
+  transition: all 0.5s;
+}
+
+*,
+*::after,
+*::before {
+  font-family: "Poppins", sans-serif;
+  transition: all 0.5s;
+}
+
+a {
+  text-decoration: none;
+  cursor: pointer;
+  color: black;
+}
+
+body {
+  font-family: "Poppins", sans-serif;
+  margin: 20px;
+  background-color: #f4f4f4;
+  color: #333;
+  transition: all 0.5;
+}
+
+.tab {
+  justify-content: center;
+  padding: 55px 10px 0px;
+  display: flex;
+  overflow: hidden;
+  background-color: #f1f1f100;
+  max-width: 640px;
+  margin: auto;
+  border-radius: 0px;
+}
+
+.tab button {
+  background-color: inherit;
+  float: left;
+  border: none;
+  outline: none;
+  cursor: pointer;
+  padding: 14px 16px;
+  transition: 0.5s;
+  color: #8b8b8b;
+  border-radius: 0px;
+}
+
+.tab button:hover {
+  background-color: #ddd;
+  border-radius: 0px;
+}
+
+.tab button.active {
+  background: #fff;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+  border-radius: 0px;
+  color: black;
+}
+
+.tabcontent {
+  display: none;
+  border-top: none;
+}
+
+#theme-toggle {
+  position: absolute;
+  right: 20px;
+  top: 20px;
+  background-color: #ffcc004a;
+}
+
+#theme-toggle:hover {
+  background-color: #ffcc006b;
+}
+
+h1 {
+  color: #333;
+}
+
+.container {
+  max-width: 600px;
+  margin: auto;
+  background: #fff;
+  padding: 20px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+
+.subject {
+  margin-bottom: 20px;
+}
+
+label {
+  display: block;
+  margin-bottom: 5px;
+  color: #333;
+}
+
+input[type="number"] {
+  width: calc(44% - 10px);
+  padding: 8px;
+  margin-right: 10px;
+  margin-bottom: 10px;
+  border: 1px solid #ddd;
+  border-radius: 4px;
+}
+
+button {
+  display: inline-block;
+  padding: 10px 20px;
+  font-size: 16px;
+  border: none;
+  border-radius: 4px;
+  transition: all 0.5s;
+  cursor: pointer;
+}
+
+.calculate {
+  background-color: #5cb85c;
+  color: white;
+}
+
+button span {
+  cursor: pointer;
+  display: inline-block;
+  position: relative;
+  transition: all 0.5s;
+}
+
+.calculate:hover {
+  background-color: #4cae4c;
+}
+
+.calculate span:after {
+  content: "\00bb";
+  position: absolute;
+  opacity: 0;
+  top: 0;
+  right: -20px;
+  transition: all 0.5s;
+}
+
+.calculate:hover span {
+  padding-right: 25px;
+}
+
+.calculate:hover span:after {
+  opacity: 1;
+  right: 0;
+}
+
+.result {
+  margin-top: 20px;
+  padding: 10px;
+  background: #fff;
+  border-radius: 4px;
+  border: 1px solid #ddd;
+  width: calc(92% - 10px);
+}
+
+.developedBy {
+  position: relative;
+  margin: 10px;
+  text-align: center;
+}
+
+.developedBy a {
+  text-decoration: underline;
+  color: #0074ff;
+}
+
+@media screen and (max-width: 425px) {
+  .subject {
+    display: flex;
+    flex-direction: column;
+  }
+
+  input[type="number"] {
+    width: 95%;
+  }
+}
